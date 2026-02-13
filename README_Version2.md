@@ -2,7 +2,7 @@
 
 An intelligent extraction agent powered by Microsoft Foundry that reads unstructured voter registration JSON data, extracts exactly five fields, and stores them in Azure Blob Storage via an Azure Function.
 
-## 📋 Project Overview
+##  Project Overview
 
 This project consists of two main components:
 
@@ -11,7 +11,7 @@ This project consists of two main components:
 
 ### Key Features
 
-✅ Extracts 5 fields from unstructured JSON:
+ Extracts 5 fields from unstructured JSON:
 - First Name
 - Last Name
 - Date of Birth (DOB)
@@ -19,11 +19,11 @@ This project consists of two main components:
 - Status
 - Registration ID
 
-✅ Handles multiple JSON formats (objects and arrays)
-✅ Stores validated records in Azure Blob Storage
-✅ Interactive chat interface via Microsoft Foundry Agent
-✅ Automatic summarization of batch processing results
+ Handles multiple JSON formats (objects and arrays)
+ Stores validated records in Azure Blob Storage
+ Interactive chat interface via Microsoft Foundry Agent
+ Automatic summarization of batch processing results
 
 ---
 
-## 🏗️ Project Structure
+

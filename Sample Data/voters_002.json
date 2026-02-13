@@ -1,0 +1,24 @@
+[
+  {
+    "name": {
+      "first": "Melissa",
+      "last": "Ng"
+    },
+    "dob": "1988-2-7",
+    "address": "500 6th St, austin, TX, 78701",
+    "status": "active",
+    "regId": "AUS-0002"
+  },
+  {
+    "full_name": "Melisa  Ng",
+    "date_of_birth": "02/07/88",
+    "res_address": {
+      "street": "500 Sixth Street",
+      "city": "Austin",
+      "state": "Texas",
+      "postal": "78701-0000"
+    },
+    "status": "actve",
+    "registrationId": "AUS-2"
+  }
+]

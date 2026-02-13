@@ -1,0 +1,12 @@
+{
+  "full_name": "Juan D. O’Malley",
+  "dob": "2007-11-03",
+  "address": {
+    "line1": "8901 Ranch Road 2222 #14",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78730"
+  },
+  "status": "Pending",
+  "registration_id": "AUS-0003"
+}

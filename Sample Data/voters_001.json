@@ -1,0 +1,12 @@
+{
+  "fullName": "  Carter, John ",
+  "dob": "1990/07/14",
+  "res_address": {
+    "line1": "123 Main st.",
+    "city": "Austin",
+    "state": "tx",
+    "zip": "78701-1234"
+  },
+  "status": "Active ",
+  "registration_id": " AUS-0001 "
+}

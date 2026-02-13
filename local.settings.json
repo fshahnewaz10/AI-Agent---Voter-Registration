@@ -3,7 +3,7 @@
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "STORAGE_ACCOUNT_URL": "https://rgtestade6.blob.core.windows.net",
+    "STORAGE_ACCOUNT_URL": "YOUR_STORAGE_ACCOUNT_URL",
 
     "STORAGE_CONTAINER": "voter-test"
   }

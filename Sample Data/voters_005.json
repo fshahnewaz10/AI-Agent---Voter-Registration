@@ -1,0 +1,12 @@
+{
+  "fullName": "john delmont",
+  "dob": "08/01/1993",
+  "res_address": {
+    "line1": "2100 East Riverside Drive #1203",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78741-0000"
+  },
+  "status": "ACTIVE",
+  "registration_id": "AUS-4"
+}

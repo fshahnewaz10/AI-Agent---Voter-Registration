@@ -1,0 +1,94 @@
+metadata:
+  logo: Avatar_Default.svg
+  welcomeMessage: Voter Registration Analyst
+  description: Extracts unstructured voter data and stores into database. Also, responses back on voter information.
+  modified_at: "1770890099"
+object: agent.version
+id: s-e:6
+name: s-e
+version: "6"
+description: Extracts unstructured voter data and stores into database. Also, responses back on voter information.
+created_at: 1770890100
+definition:
+  kind: prompt
+  model: gpt-4.1
+  instructions: |
+    You are an extraction agent. 
+    Read unstructured JSON and extract exactly five fields: 
+    - first name 
+    - last name 
+    - dob 
+    - address 
+    - status 
+    - registration_id 
+     
+    Rules: 
+    - Accept any JSON shape (object or array). If array, handle items one-by-one. 
+    - If multiple fields map to the same concept (e.g., fullName vs name), choose the most complete. 
+    - No normalization, deduplication, or complex validation required. 
+    - After extracting, call the tool `new_store_record` Azure Function. 
+    - If a field is missing, ask the user one clarifying question; if still missing, skip that item and continue. 
+    - Summarize how many items were stored at the end of a batch. 
+  tools:
+    - type: file_search
+      vector_store_ids:
+        - "{{ VECTOR_STORE_ID }}"
+    - type: openapi
+      openapi:
+        name: openapifunc
+        description: connect to functions for data extraction
+        spec:
+          openapi: 3.0.3
+          info:
+            title: Voter Store API
+            version: 1.0.0
+            description: Stores extracted voter fields by calling an Azure Function.
+          servers:
+            - url: "{{ AZURE_FUNCTION_ENDPOINT }}"
+          paths:
+            /api/new_store_record:
+              post:
+                operationId: store_record
+                summary: Store extracted voter record
+                requestBody:
+                  required: true
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          dob:
+                            type: string
+                          address:
+                            type: string
+                          status:
+                            type: string
+                          registration_id:
+                            type: string
+                        required:
+                          - name
+                          - dob
+                          - address
+                          - status
+                          - registration_id
+                responses:
+                  "200":
+                    description: Stored successfully
+                    content:
+                      application/json:
+                        schema:
+                          type: object
+                security:
+                  - functionKey: []
+          components:
+            securitySchemes:
+              functionKey:
+                type: apiKey
+                in: header
+                name: x-functions-key
+        auth:
+          type: project_connection
+          security_scheme:
+            project_connection_id: "{{ PROJECT_CONNECTION_ID }}"

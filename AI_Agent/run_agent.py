@@ -5,7 +5,7 @@
 from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 
-myEndpoint = "https://dm-ai-foundry.services.ai.azure.com/api/projects/Dev-AI-Foundry"
+myEndpoint = "AI_PROJECT_ENDPOINT"  # e.g., "https://my-resource-name.openai.azure.com/"
 
 project_client = AIProjectClient(
     endpoint=myEndpoint,
